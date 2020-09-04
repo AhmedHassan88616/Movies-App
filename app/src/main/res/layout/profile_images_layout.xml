@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="movieBackdropsandPoster"
+            type="com.example.moviesapp.model.movie.MovieBackdropsandPosters" />
+
+        <variable
+            name="personImageProfile"
+            type="com.example.moviesapp.model.person.PersonImageProfile" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp">
+
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="230dp"
+            android:layout_height="230dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:transitionName="image_transition" />
+
+    </androidx.cardview.widget.CardView>
+</layout>

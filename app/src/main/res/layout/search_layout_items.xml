@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="movieResponseResult"
+            type="com.example.moviesapp.model.movie.MovieResponseResult" />
+
+        <variable
+            name="personResponseResult"
+            type="com.example.moviesapp.model.person.PersonResponseResult" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.github.florent37.diagonallayout.DiagonalLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                app:diagonal_angle="6"
+                app:diagonal_direction="left"
+                app:diagonal_position="bottom">
+
+                <com.flaviofaria.kenburnsview.KenBurnsView
+                    android:id="@+id/poster_image_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="center" />
+            </com.github.florent37.diagonallayout.DiagonalLayout>
+
+            <TextView
+                android:id="@+id/poster_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="@{(movieResponseResult!=null)?movieResponseResult.title:personResponseResult.name}"
+                android:textColor="#000"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
